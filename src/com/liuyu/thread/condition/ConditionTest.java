@@ -48,6 +48,7 @@ public class ConditionTest {
 			//上锁
 			lock.lock();
 			try {
+				//这里使用while循环的原因是因为，防止有线程虚假唤醒的情况
 				while(!flag){
 					try {
 						System.out.println("子线程在等待");
